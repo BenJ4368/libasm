@@ -21,7 +21,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	@ echo "$(GREEN)$(NAME) $(CYAN)created successfully! $(CLR_RMV)✔️"
+	@echo "$(GREEN)$(NAME) $(CYAN)created successfully! $(CLR_RMV)✔️"
 
 %.o: %.s
 	nasm -f elf64 $< -o $@
