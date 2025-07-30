@@ -384,8 +384,6 @@ void test_ft_strdup() {
     printf("NULL source -> result: %p, errno: %d\n", (void*)result5, errno5);
     print_test_result("strdup NULL", result5 == NULL && errno5 == 22);
     
-    // Test simulation d'échec malloc (difficile à tester directement)
-    printf("Note: malloc failure simulation would require special setup\n");
 }
 
 void print_summary() {
