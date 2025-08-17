@@ -1,11 +1,11 @@
-section .text
-global ft_read
-extern __errno_location
+section .text ; "ceci est du code executable"
+global ft_read ; "rend ft_read visible depuis d'autres fichiers"
+extern __errno_location ; "declare errno en fonction externe"
 
 ft_read:
-    mov rax, 0          ; set rax a 0 (0 = read syscall)
-    syscall             ; Effectue l'appel système
-    cmp rax, 0          ; Vérifie si l'appel a échoué
+    mov rax, 0          ; set rax a 0 (0 = syscall de read)
+    syscall             ; Effectue l'appel système (les arguments sont places dans rdi rsi et rdx)
+    cmp rax, 0          ; Compare la valeur de retour du syscall
     jl .error           ; Si rax < 0, il y a une erreur
     ret
 
